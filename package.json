@@ -5,7 +5,9 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha ./lib/test",
-    "start": "./node_modules/.bin/coffee index.coffee"
+    "start": "./node_modules/.bin/coffee index.coffee",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -19,12 +21,14 @@
   "author": "Caesar Chi",
   "license": "MIT",
   "dependencies": {
-    "requestretry": "^1.2.2"
+    "requestretry": "^1.2.2",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "coffee-script": "~1.7.1",
     "mocha": "^2.1.0",
     "nock": "^1.2.0",
     "should": "~3.3.1"
-  }
+  },
+  "snyk": true
 }
